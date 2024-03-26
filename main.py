@@ -8,3 +8,7 @@ app=Client('mussaid_bot', api_hash=api_hash, api_id=api_id, bot_token=bot_token)
 async def welcome(client, message):
   chat_id=message.chat.id
   client.send_message(chat_id=chat_id, text="hi")
+
+
+if __name__=="__main__":
+  app.run()
