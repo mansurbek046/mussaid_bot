@@ -2,6 +2,7 @@ from credentials import api_hash, api_id, bot_token
 import logging
 from pyrogram import Client, filters
 from urllib.parse import urlparse, parse_qs
+from instagram import instagram
 
 app=Client('mussaid_bot', api_hash=api_hash, api_id=api_id, bot_token=bot_token)
 
@@ -34,10 +35,12 @@ async def handler(client, message):
       if parsed_url.netloc in networks:
         count=-1
         if "instagram" in str(parsed_url.netloc):
-          await client.send_message(chat_id=chat_id, text="Instagram")
+          print(parsed_url, url)
+          await instagram(url)
+          # await client.send_message(chat_id=chat_id, text="Instagram")
   
     if count==len(urls):
-      await client.send_message(chat_id=chat_id, text="Send me link from Instagram, X, TikTok or Telegram Story...")
+      await client.send_message(chat_id=chat_id, text="Please, Send me link from Instagram, X, TikTok or Telegram Story...")
   
   await client.send_message(chat_id=chat_id, text="message")
 
