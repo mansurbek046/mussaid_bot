@@ -36,7 +36,7 @@ async def handler(client, message):
         if "instagram" in str(parsed_url.netloc):
           client.send_message(chat_id=chat_id, text="Instagram")
   
-    if count=len(urls):
+    if count==len(urls):
       await client.send_message(chat_id=chat_id, text="Send me link from Instagram, X, TikTok or Telegram Story...")
   
   await client.send_message(chat_id=chat_id, "message")
