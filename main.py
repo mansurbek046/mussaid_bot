@@ -39,7 +39,7 @@ async def handler(client, message):
     if count==len(urls):
       await client.send_message(chat_id=chat_id, text="Send me link from Instagram, X, TikTok or Telegram Story...")
   
-  await client.send_message(chat_id=chat_id, "message")
+  await client.send_message(chat_id=chat_id, text="message")
 
 if __name__=="__main__":
   app.run()
