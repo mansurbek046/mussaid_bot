@@ -17,6 +17,6 @@ async def instagram(url):
     # If not a profile, then try downloading the post
     try:
       post = instaloader.Post.from_shortcode(L.context, item_id)
-      L.download_post(post, target="downloads/", filename)
+      L.download_post(post, target="downloads/", filename=filename)
     except instaloader.ProfileNotExistsException:
       return "Media not found or unsupported type."
